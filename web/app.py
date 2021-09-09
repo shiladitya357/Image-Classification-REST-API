@@ -156,7 +156,7 @@ class FetchAll(Resource):
     def get(self):
         user_details = coll_name.find()
         ret_json = {}
-        if user_details.count_documents() == 0:
+        if user_details.count() == 0:
             retjson = {
                 "Status":404,
                 "Message":"No registered users found"
@@ -179,4 +179,4 @@ api.add_resource(Refill, '/refill')
 api.add_resource(FetchAll, '/fetchall')
 
 if __name__=="__main__":
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host="0.0.0.0",port=5000)
