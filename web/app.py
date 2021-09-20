@@ -11,7 +11,7 @@ import json
 app = Flask(__name__)
 api = Api(app)
 
-cluster_conn = MongoClient("mongodb+srv://shiladitya:shiladitya29197@cluster0.ycc5p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+cluster_conn = MongoClient("mongodb+srv://<username>:<password>@cluster0.ycc5p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = cluster_conn['ImageRecognition']
 coll_name = db["Users"]
 
